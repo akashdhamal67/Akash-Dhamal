@@ -5,6 +5,8 @@ use IO::Socket::INET;
 use File::Spec;
 use Cwd 'abs_path';
 
+$SIG{PIPE} = 'IGNORE';
+
 my $port = $ARGV[0] || 3000;
 my $root = abs_path(File::Spec->rel2abs('.'));
 
@@ -17,6 +19,7 @@ my %mime = (
     'jpg'  => 'image/jpeg',
     'jpeg' => 'image/jpeg',
     'json' => 'application/json',
+    'webp' => 'image/webp',
     'ico'  => 'image/x-icon'
 );
 
@@ -40,6 +43,7 @@ while (my $client = $server->accept()) {
 
     if ($request_line =~ m{^GET\s+([^\s?]+)}) {
         my $path = $1;
+        $path =~ s/%([0-9A-Fa-f]{2})/chr(hex($1))/eg;
         $path = '/index.html' if $path eq '/';
         my $file_path = File::Spec->catfile($root, split(m{/}, $path));
 

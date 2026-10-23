@@ -1,0 +1,20 @@
+{
+  "name": "two-sips-cafe",
+  "version": "1.0.0",
+  "description": "Two Sips — Premium Cafe Landing Page. Two Cups. One Story.",
+  "scripts": {
+    "start": "perl server.pl 3000",
+    "serve": "npx serve .",
+    "dev": "npx vite"
+  },
+  "keywords": [
+    "cafe",
+    "coffee",
+    "landing-page",
+    "specialty-coffee",
+    "restaurant",
+    "responsive"
+  ],
+  "author": "Two Sips Team",
+  "license": "MIT"
+}

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Sips — Two Cups. One Story. | Specialty Cafe</title>
+  <meta name="description" content="A modern, cozy cafe serving freshly brewed coffee, delicious snacks, and sweet treats in a welcoming atmosphere. Good Coffee. Great Moments.">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B2920' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 8h1a4 4 0 0 1 0 8h-1'></path><path d='M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z'></path><line x1='6' y1='1' x2='6' y2='4'></line><line x1='10' y1='1' x2='10' y2='4'></line><line x1='14' y1='1' x2='14' y2='4'></line></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="home">
+
+  <!-- Navigation Bar -->
+  <header class="navbar transparent" id="navbar">
+    <div class="container navbar-container">
+      <!-- Left: Artisan Brand Logo -->
+      <a href="#home" class="logo-brand" aria-label="Two Sips Home">
+        <div class="logo-emblem-wrap">
+          <svg class="logo-emblem-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2" opacity="0.35" />
+            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.2" opacity="0.8" />
+            <path d="M12 32C15 34 33 34 36 32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M13.5 21H23.5V25C23.5 28 20.5 30 17 30C14.5 30 13.5 28 13.5 25V21Z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M13.5 22H10.5C9.5 22 9.5 25.5 10.5 26H13.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+            <path d="M24.5 21H34.5V25C34.5 28 33.5 30 31 30C27.5 30 24.5 28 24.5 25V21Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M34.5 22H37.5C38.5 22 38.5 25.5 37.5 26H34.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+            <path d="M18 17C17.2 14.5 19 12.5 18.2 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            <path d="M24 16C23.5 13.5 24.8 11.5 24 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M30 17C29.2 14.5 31 12.5 30.2 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            <path d="M24 5L24.8 7L27 7.8L24.8 8.6L24 10.5L23.2 8.6L21 7.8L23.2 7L24 5Z" fill="currentColor" opacity="0.9" />
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-name">TWO SIPS</span>
+          <span class="logo-kicker">COFFEE &amp; BAKEHOUSE</span>
+        </div>
+      </a>
+
+      <!-- Right: Desktop Navigation Links -->
+      <nav class="nav-menu-desktop" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#story" class="nav-link">Our Story</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#visit" class="nav-link">Visit Us</a>
+      </nav>
+
+      <!-- Desktop Prominent CTA -->
+      <div class="nav-cta-desktop">
+        <a href="#menu" class="btn btn-primary btn-sm">Explore Menu</a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobileBackdrop"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-menu-links">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#story" class="mobile-nav-link">Our Story</a>
+      <a href="#menu" class="mobile-nav-link">Menu</a>
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#visit" class="mobile-nav-link">Visit Us</a>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <a href="#menu" class="btn btn-primary" style="width: 100%;">Explore Menu</a>
+      <p class="mobile-nav-tagline">Two Cups. One Story.</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Section 3: Hero Section (Art-Directed Cafe Premises Showcase) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-ambient-glow"></div>
+      <div class="container hero-grid">
+        <!-- Content Column -->
+        <div class="hero-content">
+          <div class="hero-kicker-wrap">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>YOUR EVERYDAY COFFEE SPOT</span>
+            </div>
+          </div>
+
+          <h1 class="hero-headline">
+            Good Coffee.<br>
+            <em>Great Moments.</em>
+          </h1>
+
+          <p class="hero-description">
+            From your first sip of the morning to a much-needed afternoon break, discover freshly brewed coffee, comforting bites, and a cozy place to slow down.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary">
+              <span>Explore Our Menu</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#story" class="btn btn-secondary">Our Story</a>
+          </div>
+
+          <div class="hero-meta-strip">
+            <div class="hero-support-pill">
+              <span>Coffee</span> &bull; <span>Bites</span> &bull; <span>Desserts</span>
+            </div>
+            <div class="hero-location-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-warm-coffee);">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Artisan Quarter &bull; Open Daily</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Column: Editorial Cafe Premises Showcase -->
+        <div class="hero-media-composition">
+          <!-- Main Frame: High-Resolution Architectural Cafe Premises -->
+          <div class="hero-premises-frame">
+            <img 
+              src="two sips images/944fb386-9395-4302-a45f-b9e67dd57deb.jpg" 
+              alt="Two Sips Coffee &amp; Bakehouse modern cafe premises with sunlit tables, pendant lights, and welcoming artisan ambience"
+              class="hero-premises-img"
+              loading="eager"
+            >
+            <div class="hero-premises-tag">
+              <span class="hero-premises-tag-dot"></span>
+              <span>Cafe Space &bull; Artisan Ambience</span>
+            </div>
+          </div>
+
+          <!-- Floating Artisan Detail Card -->
+          <div class="hero-artisan-float">
+            <div class="hero-artisan-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v8"></path>
+                <path d="m4.93 10.93 1.41 1.41"></path>
+                <path d="M2 18h2"></path>
+                <path d="M20 18h2"></path>
+                <path d="m19.07 10.93-1.41 1.41"></path>
+                <path d="M22 22H2"></path>
+                <path d="m8 22 4-10 4 10"></path>
+              </svg>
+            </div>
+            <div class="hero-artisan-text">
+              <h4>Single Origin Beans</h4>
+              <p>House roasted daily &bull; Brewed per cup</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Featured Favorites -->
+    <section class="favorites-section" id="favorites">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <span class="section-kicker-dot"></span>
+            <span>House Specials</span>
+          </div>
+          <h2 class="section-title">Your Next Favorite Sip</h2>
+          <p class="section-subtitle">Simple favorites, made for everyday moments.</p>
+        </div>
+
+        <div class="favorites-grid">
+          <!-- Card 1: Cappuccino -->
+          <article class="favorite-card">
+            <div class="favorite-image-container">
+              <img 
+                src="two sips images/Gemini_Generated_Image_wo4nhrwo4nhrwo4n (1).png" 
+                alt="Two Sips Cappuccino with smooth micro-foam latte art in ceramic cup" 
+                class="favorite-img"
+                loading="lazy"
+              >
+              <span class="favorite-card-badge">Barista Choice</span>
+            </div>
+            <div class="favorite-content">
+              <h3 class="favorite-title">Cappuccino</h3>
+              <p class="favorite-description">
+                Rich espresso finished with smooth, velvety milk.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Classic Cold Coffee -->
+          <article class="favorite-card">
+            <div class="favorite-image-container">
+              <img 
+                src="two sips images/wmremove-transformed (6).png" 
+                alt="Classic cold coffee poured over crystal ice in tall fluted glass" 
+                class="favorite-img"
+                loading="lazy"
+              >
+              <span class="favorite-card-badge">Guest Favorite</span>
+            </div>
+            <div class="favorite-content">
+              <h3 class="favorite-title">Classic Cold Coffee</h3>
+              <p class="favorite-description">
+                Chilled, creamy, and refreshing from the very first sip.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Chocolate Brownie -->
+          <article class="favorite-card">
+            <div class="favorite-image-container">
+              <img 
+                src="two sips images/wmremove-transformed (1).png" 
+                alt="Warm chocolate brownie with molten chocolate drizzle and crumb texture" 
+                class="favorite-img"
+                loading="lazy"
+              >
+              <span class="favorite-card-badge">Fresh Bakery</span>
+            </div>
+            <div class="favorite-content">
+              <h3 class="favorite-title">Chocolate Brownie</h3>
+              <p class="favorite-description">
+                A rich chocolate treat to make your coffee break sweeter.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Our Story (Editorial Collage Layout) -->
+    <section class="story-section" id="story">
+      <div class="container story-grid">
+        <!-- Visual Story Column -->
+        <div class="story-media-collage">
+          <div class="story-img-main-wrap">
+            <img 
+              src="two sips images/52111ef4-8448-4e22-9b98-bf98efe10500.jpg" 
+              alt="Two Sips artisan bakehouse counter with fresh croissants, fruit danishes, and specialty coffee bar" 
+              class="story-img-main"
+              loading="lazy"
+            >
+          </div>
+          <div class="story-accent-card">
+            <div class="story-accent-number">100%</div>
+            <h4 class="story-accent-title">Arabica Specialty Beans</h4>
+            <p class="story-accent-sub">Small-batch roasted to highlight natural warmth and caramel sweetness.</p>
+          </div>
+        </div>
+
+        <!-- Story Content Column -->
+        <div class="story-content">
+          <div class="section-kicker">
+            <span class="section-kicker-dot"></span>
+            <span>About Two Sips</span>
+          </div>
+          <h2 class="story-heading">More Than Coffee.<br>It's a Feeling.</h2>
+          
+          <p class="story-description">
+            At Two Sips, we believe the best moments often begin with something simple. The aroma of freshly brewed coffee, a favorite snack, and a comfortable place to pause. Whether you're catching up with friends, taking a break between classes, or enjoying a quiet moment, there's always a place for you here.
+          </p>
+
+          <div class="story-highlights">
+            <div class="story-highlight-item">
+              <h4>Welcoming to All</h4>
+              <p>Designed for study sessions, meetings, or solo reading afternoons.</p>
+            </div>
+            <div class="story-highlight-item">
+              <h4>Crafted with Care</h4>
+              <p>Balanced extraction, fresh dairy, and comforting artisan bakery recipes.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" data-open-modal="storyModal">
+            <span>Discover Our Story</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Menu Section (12 Unique Items across 4 Categories) -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <span class="section-kicker-dot"></span>
+            <span>Handcrafted Selections</span>
+          </div>
+          <h2 class="section-title">Good Things on the Menu</h2>
+          <p class="section-subtitle">Your coffee favorites, quick bites, and little treats.</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="menu-tabs-wrapper">
+          <div class="menu-tabs" role="tablist" aria-label="Menu category filters">
+            <button class="menu-tab-btn active" data-category="all" role="tab" aria-selected="true">All Items</button>
+            <button class="menu-tab-btn" data-category="hot-coffee" role="tab" aria-selected="false">Hot Coffee</button>
+            <button class="menu-tab-btn" data-category="cold-coffee" role="tab" aria-selected="false">Cold Coffee</button>
+            <button class="menu-tab-btn" data-category="quick-bites" role="tab" aria-selected="false">Quick Bites</button>
+            <button class="menu-tab-btn" data-category="sweet-treats" role="tab" aria-selected="false">Sweet Treats</button>
+          </div>
+        </div>
+
+        <!-- 12 Menu Items Grid -->
+        <div class="menu-grid" id="menuItemsGrid">
+          
+          <!-- HOT COFFEE (4 Items) -->
+          <!-- 1. Espresso -->
+          <article class="menu-item-card" data-category="hot-coffee">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=400&q=80" alt="Espresso shot with rich golden crema" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Espresso</h4>
+              <p class="menu-item-desc">A bold, concentrated shot extracted under pressure with rich caramel crema.</p>
+              <span class="menu-item-category-tag">Hot Coffee</span>
+            </div>
+          </article>
+
+          <!-- 2. Americano -->
+          <article class="menu-item-card" data-category="hot-coffee">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=400&q=80" alt="Americano coffee in minimalist ceramic mug" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Americano</h4>
+              <p class="menu-item-desc">Double espresso diluted with hot water for a smooth, deep coffee flavor.</p>
+              <span class="menu-item-category-tag">Hot Coffee</span>
+            </div>
+          </article>
+
+          <!-- 3. Cappuccino -->
+          <article class="menu-item-card" data-category="hot-coffee">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80" alt="Cappuccino with creamy foam rosette" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Cappuccino</h4>
+              <p class="menu-item-desc">Equal parts rich espresso, steamed milk, and silky velvety foam.</p>
+              <span class="menu-item-category-tag">Hot Coffee</span>
+            </div>
+          </article>
+
+          <!-- 4. Cafe Latte -->
+          <article class="menu-item-card" data-category="hot-coffee">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?auto=format&fit=crop&w=400&q=80" alt="Cafe Latte with warm poured milk" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Cafe Latte</h4>
+              <p class="menu-item-desc">Smooth espresso harmonized with generous steamed milk and light froth.</p>
+              <span class="menu-item-category-tag">Hot Coffee</span>
+            </div>
+          </article>
+
+          <!-- COLD COFFEE (2 Items) -->
+          <!-- 5. Classic Cold Coffee -->
+          <article class="menu-item-card" data-category="cold-coffee">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=400&q=80" alt="Creamy classic iced coffee" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Classic Cold Coffee</h4>
+              <p class="menu-item-desc">Chilled espresso blended with chilled milk and a hint of organic sweetness.</p>
+              <span class="menu-item-category-tag">Cold Coffee</span>
+            </div>
+          </article>
+
+          <!-- 6. Iced Latte -->
+          <article class="menu-item-card" data-category="cold-coffee">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=400&q=80" alt="Iced latte layered with espresso and milk" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Iced Latte</h4>
+              <p class="menu-item-desc">Freshly pulled espresso poured over cold whole milk and crystalline ice.</p>
+              <span class="menu-item-category-tag">Cold Coffee</span>
+            </div>
+          </article>
+
+          <!-- QUICK BITES (3 Items) -->
+          <!-- 7. Veg Grilled Sandwich -->
+          <article class="menu-item-card" data-category="quick-bites">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=400&q=80" alt="Golden grilled veggie sandwich sliced diagonally" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Veg Grilled Sandwich</h4>
+              <p class="menu-item-desc">Artisan sourdough pressed with seasonal grilled vegetables, herbs, and cheese.</p>
+              <span class="menu-item-category-tag">Quick Bites</span>
+            </div>
+          </article>
+
+          <!-- 8. French Fries -->
+          <article class="menu-item-card" data-category="quick-bites">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=400&q=80" alt="Crispy golden potato fries" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">French Fries</h4>
+              <p class="menu-item-desc">Crispy skin-on golden potato fries tossed in crushed sea salt and rosemary.</p>
+              <span class="menu-item-category-tag">Quick Bites</span>
+            </div>
+          </article>
+
+          <!-- 9. Veg Burger -->
+          <article class="menu-item-card" data-category="quick-bites">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" alt="Gourmet toasted vegetable burger" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Veg Burger</h4>
+              <p class="menu-item-desc">Crispy plant patty, farm lettuce, vine tomatoes, and signature cafe emulsion.</p>
+              <span class="menu-item-category-tag">Quick Bites</span>
+            </div>
+          </article>
+
+          <!-- SWEET TREATS (3 Items) -->
+          <!-- 10. Chocolate Brownie -->
+          <article class="menu-item-card" data-category="sweet-treats">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80" alt="Decadent chocolate brownie square" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Chocolate Brownie</h4>
+              <p class="menu-item-desc">Fudgy 70% dark chocolate square served warm with a delicate crackled top.</p>
+              <span class="menu-item-category-tag">Sweet Treats</span>
+            </div>
+          </article>
+
+          <!-- 11. Chocolate Muffin -->
+          <article class="menu-item-card" data-category="sweet-treats">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=400&q=80" alt="Bakery chocolate muffin with chocolate drops" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Chocolate Muffin</h4>
+              <p class="menu-item-desc">Moist baked muffin loaded with Belgian chocolate chips and cocoa dust.</p>
+              <span class="menu-item-category-tag">Sweet Treats</span>
+            </div>
+          </article>
+
+          <!-- 12. Chocolate Cake -->
+          <article class="menu-item-card" data-category="sweet-treats">
+            <div class="menu-item-thumb">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" alt="Slice of rich layered chocolate ganache cake" loading="lazy">
+            </div>
+            <div class="menu-item-details">
+              <h4 class="menu-item-name">Chocolate Cake</h4>
+              <p class="menu-item-desc">Tender layered dark sponge coated in silky handcrafted chocolate ganache.</p>
+              <span class="menu-item-category-tag">Sweet Treats</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Cafe Experience (Atmospheric Visual Pillars) -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">
+            <span class="section-kicker-dot"></span>
+            <span>Atmosphere &amp; Craft</span>
+          </div>
+          <h2 class="section-title">A Little Pause in Your Day</h2>
+          <p class="section-subtitle">A welcoming space crafted for everyday rituals, quiet focus, and warm conversations.</p>
+        </div>
+
+        <div class="experience-grid">
+          <!-- Experience 1: Freshly Brewed -->
+          <div class="experience-card">
+            <div class="experience-img-wrap">
+              <img 
+                src="two sips images/8b62b362-1f44-41fb-b55b-863a62f3d1a9.jpg" 
+                alt="Freshly brewed cappuccino with latte art and a golden flaky croissant" 
+                class="experience-img"
+                loading="lazy"
+              >
+              <span class="experience-index-tag">01 / CRAFT</span>
+            </div>
+            <div class="experience-body">
+              <div class="experience-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+                  <line x1="6" y1="2" x2="6" y2="4"></line>
+                  <line x1="10" y1="2" x2="10" y2="4"></line>
+                  <line x1="14" y1="2" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <h3 class="experience-title">Freshly Brewed</h3>
+              <p class="experience-desc">Coffee prepared to make every sip enjoyable.</p>
+            </div>
+          </div>
+
+          <!-- Experience 2: Comfort Food -->
+          <div class="experience-card">
+            <div class="experience-img-wrap">
+              <img 
+                src="two sips images/wmremove-transformed (3).png" 
+                alt="Comforting grilled artisan sandwich with melted cheese, crispy fries, and dipping sauce" 
+                class="experience-img"
+                loading="lazy"
+              >
+              <span class="experience-index-tag">02 / BITES</span>
+            </div>
+            <div class="experience-body">
+              <div class="experience-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <h3 class="experience-title">Comfort Food</h3>
+              <p class="experience-desc">Simple snacks and sweet treats for your cravings.</p>
+            </div>
+          </div>
+
+          <!-- Experience 3: Your Kind of Space -->
+          <div class="experience-card">
+            <div class="experience-img-wrap">
+              <img 
+                src="two sips images/wmremove-transformed (5).png" 
+                alt="Friends enjoying coffee, conversation, and study time together in Two Sips cafe" 
+                class="experience-img"
+                loading="lazy"
+              >
+              <span class="experience-index-tag">03 / SPACE</span>
+            </div>
+            <div class="experience-body">
+              <div class="experience-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <h3 class="experience-title">Your Kind of Space</h3>
+              <p class="experience-desc">A welcoming spot for studying, working, conversations, or relaxing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Visit Us -->
+    <section class="visit-section" id="visit">
+      <div class="container">
+        <div class="visit-card-container">
+          <!-- Background watermark design -->
+          <div class="visit-bg-watermark">2SIPS</div>
+
+          <div class="visit-grid">
+            <!-- Left Info & CTAs -->
+            <div class="visit-content">
+              <div class="section-kicker" style="background-color: rgba(230, 213, 191, 0.18); color: var(--color-beige); border-color: rgba(230, 213, 191, 0.25);">
+                <span class="section-kicker-dot" style="background-color: var(--color-beige);"></span>
+                <span>Drop In Anytime</span>
+              </div>
+              <h2>Your Coffee Break Awaits.</h2>
+              <p class="visit-description">
+                Drop by for your favorite coffee, something delicious to eat, and a little time to yourself.
+              </p>
+
+              <div class="visit-actions">
+                <button class="btn btn-ghost-cream" data-open-modal="directionsModal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                  </svg>
+                  <span>Get Directions</span>
+                </button>
+                <button class="btn btn-secondary" style="color: var(--color-cream); border-color: var(--color-cream);" data-open-modal="contactModal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>Contact Us</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Editable Details Box -->
+            <div class="visit-details-box">
+              <div class="visit-highlight-frame">
+                <img 
+                  src="two sips images/wmremove-transformed (2).png" 
+                  alt="Cozy armchair reading corner with warm Two Sips wooden wall sign" 
+                  class="visit-highlight-img"
+                  loading="lazy"
+                >
+                <div class="visit-highlight-badge">
+                  <span>Cozy Corner &bull; Drop In</span>
+                </div>
+              </div>
+
+              <div class="visit-info-list">
+                
+                <!-- Address -->
+                <div class="visit-info-item">
+                  <div class="visit-info-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="visit-info-label">Address</div>
+                    <div class="visit-info-value" id="cafeAddressText">[Add cafe address]</div>
+                    <div class="visit-info-editable-note">422 Artisan Lane, Westside District (Placeholder)</div>
+                  </div>
+                </div>
+
+                <!-- Opening Hours -->
+                <div class="visit-info-item">
+                  <div class="visit-info-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="visit-info-label">Opening Hours</div>
+                    <div class="visit-info-value">[Add opening hours]</div>
+                    <div class="visit-info-editable-note">Mon – Fri: 7:00 AM – 9:00 PM &bull; Sat – Sun: 8:00 AM – 10:00 PM</div>
+                  </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="visit-info-item">
+                  <div class="visit-info-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="visit-info-label">Contact</div>
+                    <div class="visit-info-value">[Add phone number]</div>
+                    <div class="visit-info-editable-note">+1 (555) 234-5678 &bull; hello@twosipscafe.com</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 9: Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand & Description -->
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo-brand" aria-label="Two Sips Home">
+            <div class="footer-emblem-wrap">
+              <svg class="logo-emblem-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2" opacity="0.35" />
+                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.2" opacity="0.8" />
+                <path d="M12 32C15 34 33 34 36 32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M13.5 21H23.5V25C23.5 28 20.5 30 17 30C14.5 30 13.5 28 13.5 25V21Z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M13.5 22H10.5C9.5 22 9.5 25.5 10.5 26H13.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                <path d="M24.5 21H34.5V25C34.5 28 33.5 30 31 30C27.5 30 24.5 28 24.5 25V21Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M34.5 22H37.5C38.5 22 38.5 25.5 37.5 26H34.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                <path d="M18 17C17.2 14.5 19 12.5 18.2 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                <path d="M24 16C23.5 13.5 24.8 11.5 24 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M30 17C29.2 14.5 31 12.5 30.2 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                <path d="M24 5L24.8 7L27 7.8L24.8 8.6L24 10.5L23.2 8.6L21 7.8L23.2 7L24 5Z" fill="currentColor" opacity="0.9" />
+              </svg>
+            </div>
+            <div class="logo-text-group">
+              <span class="footer-logo-name">TWO SIPS</span>
+              <span class="footer-logo-kicker">COFFEE &amp; BAKEHOUSE &bull; EST. 2026</span>
+            </div>
+          </a>
+          <p class="footer-tagline">"Two Cups. One Story."</p>
+          <p class="footer-desc">
+            A modern, cozy cafe serving freshly brewed coffee, delicious snacks, and sweet treats in a welcoming atmosphere.
+          </p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#story" class="footer-link">Our Story</a></li>
+            <li><a href="#menu" class="footer-link">Full Menu</a></li>
+            <li><a href="#experience" class="footer-link">Cafe Experience</a></li>
+            <li><a href="#visit" class="footer-link">Visit Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Socials -->
+        <div>
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-contact-info">
+            <p><strong>Location:</strong> [Add cafe address]</p>
+            <p><strong>Hours:</strong> [Add opening hours]</p>
+            <p><strong>Contact:</strong> [Add phone number]</p>
+          </div>
+
+          <div class="footer-socials" aria-label="Social media channels">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Two Sips Cafe. All rights reserved.</p>
+        <p>Crafted for coffee lovers everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Interactive Modals
+       ========================================================================== -->
+
+  <!-- Modal: Get Directions -->
+  <div class="modal-overlay" id="directionsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="directionsModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <h3 class="modal-title font-serif" id="directionsModalTitle">Find Two Sips</h3>
+      <p class="modal-desc">Drop by whenever you need a warm cup and a moment of calm.</p>
+
+      <div class="map-placeholder-box">
+        <svg class="map-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <p style="font-weight: 600; color: var(--color-espresso); margin-bottom: 4px;">422 Artisan Lane, Westside District</p>
+        <span style="font-size: 0.85rem; color: var(--color-warm-coffee);">[Placeholder Cafe Destination]</span>
+      </div>
+
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <button class="btn btn-primary btn-sm" id="copyAddressBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copy Address</span>
+        </button>
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <span>Open in Maps</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Contact Us -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <h3 class="modal-title font-serif" id="contactModalTitle">Say Hello</h3>
+      <p class="modal-desc">Have a question or looking to host a small study group? We'd love to hear from you.</p>
+
+      <form id="cafeContactForm">
+        <div class="form-group">
+          <label class="form-label" for="contactName">Your Name</label>
+          <input type="text" id="contactName" class="form-input" placeholder="e.g. Alex Morgan" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactEmail">Email Address</label>
+          <input type="email" id="contactEmail" class="form-input" placeholder="alex@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactMessage">Message or Inquiry</label>
+          <textarea id="contactMessage" class="form-textarea" rows="4" placeholder="Tell us how we can help..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <span>Send Message</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Discover Our Story -->
+  <div class="modal-overlay" id="storyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="storyModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <h3 class="modal-title font-serif" id="storyModalTitle">The Two Sips Philosophy</h3>
+      <p class="modal-desc" style="font-style: italic; color: var(--color-warm-coffee);">"Two Cups. One Story."</p>
+
+      <div style="font-size: 0.98rem; line-height: 1.85; color: var(--text-secondary); display: flex; flex-direction: column; gap: 16px; margin-bottom: 26px;">
+        <p>
+          Two Sips was founded on a simple realization: life moves fast, but the moments that ground us are quiet, sensory, and shared. A morning walk, an inspiring conversation, or the aroma of fresh espresso beans roasting in small batches.
+        </p>
+        <p>
+          We source 100% Arabica specialty beans from sustainable grower co-operatives. Every roast profile is calibrated to bring out chocolate sweetness, gentle fruit acidity, and a smooth, lingering finish.
+        </p>
+        <p>
+          Whether you stop by solo with a sketchbook, meet a colleague for lunch, or catch up over warm chocolate brownies with friends, our doors are open to everyone.
+        </p>
+      </div>
+
+      <a href="#menu" class="btn btn-primary btn-sm mobile-drawer-close" onclick="document.getElementById('storyModal').classList.remove('open');">
+        <span>Explore Our Menu</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

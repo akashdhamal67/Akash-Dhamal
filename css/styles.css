@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 /* ==========================================================================
    Two Sips — Premium Cafe Landing Page Stylesheet
@@ -76,26 +76,28 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--color-soft-white);
   color: var(--text-primary);
-  line-height: 1.65;
+  line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  font-weight: 400;
 }
 
-h1, h2, h3, h4, .font-serif {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  font-weight: 600;
-  line-height: 1.15;
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--color-espresso);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
 }
 
 p {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
 }
 
 a {
@@ -143,21 +145,21 @@ button {
 /* Section Header Component */
 .section-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 64px auto;
+  max-width: 680px;
+  margin: 0 auto 48px auto;
 }
 
 .section-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-transform: uppercase;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   color: var(--color-warm-coffee);
-  margin-bottom: 16px;
-  padding: 6px 16px;
+  margin-bottom: 12px;
+  padding: 5px 14px;
   background-color: var(--color-cream);
   border-radius: var(--radius-full);
   border: 1px solid var(--color-warm-coffee-subtle);
@@ -172,14 +174,16 @@ button {
 }
 
 .section-title {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin-bottom: 16px;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--text-muted);
   font-weight: 400;
 }
@@ -192,10 +196,11 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 15px 30px;
-  font-size: 0.95rem;
+  padding: 13px 26px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.94rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   border-radius: var(--radius-full);
   transition: all var(--transition-normal);
   cursor: pointer;
@@ -330,24 +335,24 @@ button {
 }
 
 .logo-name {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 1.65rem;
-  letter-spacing: 0.16em;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
   color: var(--color-espresso);
   line-height: 1;
   text-transform: uppercase;
 }
 
 .logo-kicker {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 0.58rem;
-  letter-spacing: 0.26em;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
   color: var(--color-warm-coffee);
   line-height: 1;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .nav-menu-desktop {
@@ -357,12 +362,13 @@ button {
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-primary);
-  position: relative;
-  padding: 8px 0;
+  letter-spacing: 0.01em;
   transition: color var(--transition-fast);
+  position: relative;
 }
 
 .nav-link::after {
@@ -468,7 +474,7 @@ button {
 }
 
 .mobile-nav-link {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.6rem;
   color: var(--color-espresso);
   font-weight: 600;
@@ -489,7 +495,7 @@ button {
   color: var(--text-muted);
   margin-top: 14px;
   font-style: italic;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 /* ==========================================================================
@@ -497,11 +503,11 @@ button {
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 94vh;
+  min-height: 86vh;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--navbar-height) + 32px);
-  padding-bottom: 72px;
+  padding-top: calc(var(--navbar-height) + 20px);
+  padding-bottom: 60px;
   background: linear-gradient(145deg, var(--color-cream-soft) 0%, var(--color-cream) 100%);
   overflow: hidden;
 }
@@ -551,13 +557,13 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-warm-coffee);
   background-color: rgba(230, 213, 191, 0.65);
-  padding: 7px 16px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   border: 1px solid rgba(118, 87, 71, 0.18);
 }
@@ -570,11 +576,11 @@ button {
 }
 
 .hero-headline {
-  font-size: clamp(2.8rem, 5.2vw, 4.5rem);
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--color-espresso);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   letter-spacing: -0.025em;
 }
 
@@ -585,19 +591,19 @@ button {
 }
 
 .hero-description {
-  font-size: clamp(1.08rem, 1.25vw, 1.22rem);
+  font-size: clamp(1.05rem, 1.18vw, 1.15rem);
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 38px;
-  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+  max-width: 500px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 14px;
   align-items: center;
-  margin-bottom: 38px;
+  margin-bottom: 28px;
 }
 
 .hero-meta-strip {
@@ -611,11 +617,11 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
-  letter-spacing: 0.06em;
-  padding: 8px 18px;
+  letter-spacing: 0.02em;
+  padding: 7px 16px;
   background-color: rgba(255, 253, 249, 0.85);
   border-radius: var(--radius-full);
   border: 1px solid var(--border-subtle);
@@ -752,14 +758,14 @@ button {
    Featured Favorites Section
    ========================================================================== */
 .favorites-section {
-  padding: 120px 0;
+  padding: 88px 0;
   background-color: var(--color-soft-white);
 }
 
 .favorites-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 36px;
+  gap: 28px;
 }
 
 @media (min-width: 768px) {
@@ -828,22 +834,24 @@ button {
 }
 
 .favorite-title {
-  font-size: 1.45rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
 }
 
 .favorite-description {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
    Our Story Section — Editorial Collage Layout
    ========================================================================== */
 .story-section {
-  padding: 130px 0;
+  padding: 96px 0;
   background-color: var(--color-cream);
   position: relative;
 }
@@ -851,7 +859,7 @@ button {
 .story-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 64px;
+  gap: 52px;
   align-items: center;
 }
 
@@ -900,7 +908,7 @@ button {
 }
 
 .story-accent-number {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 1;
@@ -930,25 +938,26 @@ button {
 }
 
 .story-heading {
-  font-size: clamp(2.3rem, 4vw, 3.4rem);
-  margin-bottom: 24px;
-  line-height: 1.18;
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-espresso);
+  margin-bottom: 18px;
 }
 
 .story-description {
-  font-size: 1.12rem;
-  line-height: 1.85;
+  font-size: 1.02rem;
+  line-height: 1.68;
   color: var(--text-secondary);
-  margin-bottom: 34px;
+  margin-bottom: 24px;
 }
 
 .story-highlights {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 38px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-subtle);
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
 .story-highlight-item h4 {
@@ -966,14 +975,14 @@ button {
    Menu Section
    ========================================================================== */
 .menu-section {
-  padding: 130px 0;
+  padding: 96px 0;
   background-color: var(--color-soft-white);
 }
 
 .menu-tabs-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 52px;
+  margin-bottom: 36px;
   overflow-x: auto;
   padding-bottom: 8px;
 }
@@ -1010,7 +1019,7 @@ button {
 .menu-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 20px;
 }
 
 @media (min-width: 768px) {
@@ -1091,14 +1100,14 @@ button {
    Cafe Experience Section
    ========================================================================== */
 .experience-section {
-  padding: 130px 0;
+  padding: 92px 0;
   background-color: var(--color-cream);
 }
 
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
+  gap: 28px;
 }
 
 @media (min-width: 768px) {
@@ -1176,21 +1185,24 @@ button {
 }
 
 .experience-title {
-  font-size: 1.48rem;
-  margin-bottom: 12px;
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
 }
 
 .experience-desc {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
    Visit Us Section
    ========================================================================== */
 .visit-section {
-  padding: 130px 0;
+  padding: 96px 0 108px 0;
   background-color: var(--color-soft-white);
   position: relative;
 }
@@ -1216,7 +1228,7 @@ button {
   position: absolute;
   right: -60px;
   bottom: -60px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 18rem;
   font-weight: 800;
   color: rgba(246, 240, 231, 0.035);
@@ -1243,16 +1255,19 @@ button {
 
 .visit-content h2 {
   color: var(--color-cream);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
 }
 
 .visit-description {
   color: var(--color-beige);
-  font-size: 1.18rem;
-  line-height: 1.75;
-  margin-bottom: 40px;
-  max-width: 540px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 30px;
+  max-width: 500px;
 }
 
 .visit-actions {
@@ -1366,15 +1381,15 @@ button {
 .footer {
   background-color: var(--color-espresso-dark);
   color: var(--color-cream);
-  padding: 90px 0 36px 0;
+  padding: 68px 0 28px 0;
   border-top: 1px solid rgba(230, 213, 191, 0.1);
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 52px;
-  margin-bottom: 64px;
+  gap: 40px;
+  margin-bottom: 48px;
 }
 
 @media (min-width: 768px) {
@@ -1423,20 +1438,20 @@ button {
 }
 
 .footer-logo-name {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 1.85rem;
-  letter-spacing: 0.16em;
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
   color: var(--color-cream);
   line-height: 1;
   text-transform: uppercase;
 }
 
 .footer-logo-kicker {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 0.58rem;
-  letter-spacing: 0.24em;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
   color: var(--color-beige);
   text-transform: uppercase;
   margin-top: 4px;
@@ -1444,27 +1459,28 @@ button {
 }
 
 .footer-tagline {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: 1.15rem;
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.95rem;
   color: var(--color-beige);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .footer-desc {
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   color: var(--text-inverse-muted);
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .footer-heading {
-  font-family: inherit;
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--color-beige);
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 
 .footer-links {

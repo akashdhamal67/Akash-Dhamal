@@ -82,7 +82,7 @@
     </div>
 
     <div class="mobile-nav-footer">
-      <a href="#menu" class="btn btn-primary" style="width: 100%;">Explore Menu</a>
+      <a href="#menu" class="btn btn-primary mobile-nav-link" style="width: 100%;">Explore Menu</a>
       <p class="mobile-nav-tagline">Two Cups. One Story.</p>
     </div>
   </aside>
@@ -627,8 +627,7 @@
                   </div>
                   <div>
                     <div class="visit-info-label">Address</div>
-                    <div class="visit-info-value" id="cafeAddressText">[Add cafe address]</div>
-                    <div class="visit-info-editable-note">422 Artisan Lane, Westside District (Placeholder)</div>
+                    <div class="visit-info-value" id="cafeAddressText">12 Artisan Lane, Westside District</div>
                   </div>
                 </div>
 
@@ -642,8 +641,7 @@
                   </div>
                   <div>
                     <div class="visit-info-label">Opening Hours</div>
-                    <div class="visit-info-value">[Add opening hours]</div>
-                    <div class="visit-info-editable-note">Mon – Fri: 7:00 AM – 9:00 PM &bull; Sat – Sun: 8:00 AM – 10:00 PM</div>
+                    <div class="visit-info-value">Mon–Fri: 7:00 AM – 9:00 PM<br>Sat–Sun: 8:00 AM – 10:00 PM</div>
                   </div>
                 </div>
 
@@ -657,8 +655,7 @@
                   </div>
                   <div>
                     <div class="visit-info-label">Contact</div>
-                    <div class="visit-info-value">[Add phone number]</div>
-                    <div class="visit-info-editable-note">+1 (555) 234-5678 &bull; hello@twosipscafe.com</div>
+                    <div class="visit-info-value">+1 (555) 010-0123<br><span style="font-size: 0.9em; opacity: 0.85;">hello@twosips.example</span></div>
                   </div>
                 </div>
 
@@ -719,14 +716,15 @@
         <div>
           <h4 class="footer-heading">Connect</h4>
           <div class="footer-contact-info">
-            <p><strong>Location:</strong> [Add cafe address]</p>
-            <p><strong>Hours:</strong> [Add opening hours]</p>
-            <p><strong>Contact:</strong> [Add phone number]</p>
+            <p><strong>Location:</strong> 12 Artisan Lane, Westside District</p>
+            <p><strong>Hours:</strong> Mon–Fri 7AM–9PM, Sat–Sun 8AM–10PM</p>
+            <p><strong>Contact:</strong> +1 (555) 010-0123</p>
+            <p><strong>Email:</strong> hello@twosips.example</p>
           </div>
 
           <div class="footer-socials" aria-label="Social media channels">
             <!-- Instagram -->
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <a href="#" class="social-link" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -734,16 +732,9 @@
               </svg>
             </a>
             <!-- Facebook -->
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <a href="#" class="social-link" aria-label="Facebook">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
-            <!-- X / Twitter -->
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
               </svg>
             </a>
           </div>
@@ -753,7 +744,7 @@
       <!-- Footer Bottom Copyright -->
       <div class="footer-bottom">
         <p>&copy; 2026 Two Sips Cafe. All rights reserved.</p>
-        <p>Crafted for coffee lovers everywhere.</p>
+        <p>Demo website &ndash; fictional business.</p>
       </div>
     </div>
   </footer>
@@ -774,8 +765,8 @@
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        <p style="font-weight: 600; color: var(--color-espresso); margin-bottom: 4px;">422 Artisan Lane, Westside District</p>
-        <span style="font-size: 0.85rem; color: var(--color-warm-coffee);">[Placeholder Cafe Destination]</span>
+        <p style="font-weight: 600; color: var(--color-espresso); margin-bottom: 4px;">12 Artisan Lane, Westside District</p>
+        <span style="font-size: 0.85rem; color: var(--color-warm-coffee);">Mon–Fri 7AM–9PM, Sat–Sun 8AM–10PM</span>
       </div>
 
       <div style="display: flex; gap: 14px; flex-wrap: wrap;">
@@ -842,7 +833,7 @@
         </p>
       </div>
 
-      <a href="#menu" class="btn btn-primary btn-sm mobile-drawer-close" onclick="document.getElementById('storyModal').classList.remove('open');">
+      <a href="#menu" class="btn btn-primary btn-sm" data-close-modal>
         <span>Explore Our Menu</span>
       </a>
     </div>

@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.modal-overlay').forEach(modal => {
     modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.closest('.modal-close-btn')) {
+      if (e.target === modal || e.target.closest('.modal-close-btn') || e.target.closest('[data-close-modal]')) {
         closeModal(modal);
       }
     });
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyAddressBtn = document.getElementById('copyAddressBtn');
   if (copyAddressBtn) {
     copyAddressBtn.addEventListener('click', () => {
-      const addressText = document.getElementById('cafeAddressText')?.innerText || '422 Artisan Lane, Westside District';
+      const addressText = document.getElementById('cafeAddressText')?.innerText || '12 Artisan Lane, Westside District';
       navigator.clipboard.writeText(addressText).then(() => {
         showToast('Address copied to clipboard!');
       }).catch(() => {

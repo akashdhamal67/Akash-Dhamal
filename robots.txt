@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://twosip.vercel.app/sitemap.xml

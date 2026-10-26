@@ -140,8 +140,25 @@ button {
   background: none;
 }
 
-:focus-visible {
+:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role="tab"]:focus-visible {
   outline: 2px solid var(--color-warm-coffee);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* High contrast focus ring for dark background sections */
+.hero-section a:focus-visible,
+.hero-section button:focus-visible,
+.visit-section a:focus-visible,
+.visit-section button:focus-visible,
+.footer a:focus-visible,
+.footer button:focus-visible {
+  outline: 2px solid var(--color-beige);
   outline-offset: 3px;
 }
 
@@ -1322,6 +1339,7 @@ button {
   margin-bottom: 26px;
 }
 
+.story-highlight-item h3,
 .story-highlight-item h4 {
   font-size: 1.05rem;
   margin-bottom: 4px;
@@ -1416,6 +1434,7 @@ button {
     margin-bottom: 20px;
   }
 
+  .story-highlight-item h3,
   .story-highlight-item h4 {
     font-size: 1rem;
     margin-bottom: 3px;

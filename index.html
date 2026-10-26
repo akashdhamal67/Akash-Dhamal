@@ -3,11 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Two Sips — Two Cups. One Story. | Specialty Cafe</title>
-  <meta name="description" content="A modern, cozy cafe serving freshly brewed coffee, delicious snacks, and sweet treats in a welcoming atmosphere. Good Coffee. Great Moments.">
-  
+  <title>Two Sips | Coffee &amp; Bakehouse in Katraj, Pune</title>
+  <meta name="description" content="Two Sips is a cozy coffee &amp; bakehouse in Katraj, Pune. Savor artisan coffee, fresh bakes, savory bites, and sweet desserts in a warm, welcoming space.">
+  <link rel="canonical" href="https://twosip.vercel.app/">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://twosip.vercel.app/">
+  <meta property="og:title" content="Two Sips | Coffee &amp; Bakehouse in Katraj, Pune">
+  <meta property="og:description" content="Two Sips is a cozy coffee &amp; bakehouse in Katraj, Pune. Savor artisan coffee, fresh bakes, savory bites, and sweet desserts in a warm, welcoming space.">
+  <meta property="og:image" content="https://twosip.vercel.app/assets/hero-video-poster.jpg">
+  <meta property="og:image:width" content="1366">
+  <meta property="og:image:height" content="768">
+  <meta property="og:image:alt" content="Artisan coffee pour at Two Sips Coffee &amp; Bakehouse in Katraj, Pune">
+  <meta property="og:site_name" content="Two Sips">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://twosip.vercel.app/">
+  <meta name="twitter:title" content="Two Sips | Coffee &amp; Bakehouse in Katraj, Pune">
+  <meta name="twitter:description" content="Two Sips is a cozy coffee &amp; bakehouse in Katraj, Pune. Savor artisan coffee, fresh bakes, savory bites, and sweet desserts in a warm, welcoming space.">
+  <meta name="twitter:image" content="https://twosip.vercel.app/assets/hero-video-poster.jpg">
+
   <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B2920' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 8h1a4 4 0 0 1 0 8h-1'></path><path d='M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z'></path><line x1='6' y1='1' x2='6' y2='4'></line><line x1='10' y1='1' x2='10' y2='4'></line><line x1='14' y1='1' x2='14' y2='4'></line></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/favicon.svg">
 
   <!-- Google Font: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +37,60 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- LocalBusiness Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Two Sips",
+    "image": "https://twosip.vercel.app/assets/hero-video-poster.jpg",
+    "url": "https://twosip.vercel.app/",
+    "telephone": "+919096395892",
+    "email": "akashdhamal67@gmail.com",
+    "priceRange": "₹₹",
+    "servesCuisine": [
+      "Specialty Coffee",
+      "Bakery",
+      "Pastries",
+      "Desserts",
+      "Snacks"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Katraj",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411046",
+      "addressCountry": "India"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.4529,
+      "longitude": 73.8652
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com",
+      "https://facebook.com"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -120,7 +195,7 @@
           <source src="caffe%20video.mp4" type="video/mp4">
           <source src="caffe video.mp4" type="video/mp4">
         </video>
-        <img class="hero-poster-fallback" src="assets/hero-video-poster.jpg" alt="" aria-hidden="true">
+        <img class="hero-poster-fallback" src="assets/hero-video-poster.jpg" alt="" aria-hidden="true" width="1366" height="768">
         <!-- Cinematic Contrast Overlay for Text Readability -->
         <div class="hero-video-overlay"></div>
       </div>
@@ -184,7 +259,7 @@
               </svg>
             </div>
             <div class="hero-artisan-text">
-              <h4>Single Origin Beans</h4>
+              <h3 class="hero-artisan-title" style="font-size: 1rem; font-weight: 700; color: var(--color-espresso); margin-bottom: 2px;">Single Origin Beans</h3>
               <p>House roasted daily &bull; Brewed per cup</p>
             </div>
           </div>
@@ -213,6 +288,8 @@
                 alt="Two Sips Cappuccino with smooth micro-foam latte art in ceramic cup" 
                 class="favorite-img"
                 loading="lazy"
+                width="928"
+                height="1152"
               >
               <span class="favorite-card-badge">Barista Choice</span>
             </div>
@@ -232,6 +309,8 @@
                 alt="Classic cold coffee poured over crystal ice in tall fluted glass" 
                 class="favorite-img"
                 loading="lazy"
+                width="928"
+                height="1152"
               >
               <span class="favorite-card-badge">Guest Favorite</span>
             </div>
@@ -251,6 +330,8 @@
                 alt="Warm chocolate brownie with molten chocolate drizzle and crumb texture" 
                 class="favorite-img"
                 loading="lazy"
+                width="928"
+                height="1152"
               >
               <span class="favorite-card-badge">Fresh Bakery</span>
             </div>
@@ -276,11 +357,13 @@
               alt="Two Sips artisan bakehouse counter with fresh croissants, fruit danishes, and specialty coffee bar" 
               class="story-img-main"
               loading="lazy"
+              width="1219"
+              height="818"
             >
           </div>
           <div class="story-accent-card reveal-card">
             <div class="story-accent-number">100%</div>
-            <h4 class="story-accent-title">Handcrafted Bakes</h4>
+            <h3 class="story-accent-title">Handcrafted Bakes</h3>
             <p class="story-accent-sub">Buttery, flaky and made in small batches, from croissants to fruit danishes.</p>
           </div>
         </div>
@@ -299,11 +382,11 @@
 
           <div class="story-highlights">
             <div class="story-highlight-item">
-              <h4>Welcoming to All</h4>
+              <h3>Welcoming to All</h3>
               <p>Designed for study sessions, meetings, or solo reading afternoons.</p>
             </div>
             <div class="story-highlight-item">
-              <h4>Crafted with Care</h4>
+              <h3>Crafted with Care</h3>
               <p>Balanced extraction, fresh dairy, and comforting artisan bakery recipes.</p>
             </div>
           </div>
@@ -349,10 +432,10 @@
           <!-- 1. Espresso -->
           <article class="menu-item-card reveal-card" data-category="hot-coffee">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=400&q=80" alt="Espresso shot with rich golden crema" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=400&q=80" alt="Espresso shot with rich golden crema" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Espresso</h4>
+              <h3 class="menu-item-name">Espresso</h3>
               <p class="menu-item-desc">A bold, concentrated shot extracted under pressure with rich caramel crema.</p>
               <span class="menu-item-category-tag">Hot Coffee</span>
             </div>
@@ -361,10 +444,10 @@
           <!-- 2. Americano -->
           <article class="menu-item-card reveal-card" data-category="hot-coffee">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=400&q=80" alt="Americano coffee in minimalist ceramic mug" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&w=400&q=80" alt="Freshly poured Americano in a ceramic mug" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Americano</h4>
+              <h3 class="menu-item-name">Americano</h3>
               <p class="menu-item-desc">Double espresso diluted with hot water for a smooth, deep coffee flavor.</p>
               <span class="menu-item-category-tag">Hot Coffee</span>
             </div>
@@ -373,10 +456,10 @@
           <!-- 3. Cappuccino -->
           <article class="menu-item-card reveal-card" data-category="hot-coffee">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80" alt="Cappuccino with creamy foam rosette" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80" alt="Hot cappuccino with delicate latte art" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Cappuccino</h4>
+              <h3 class="menu-item-name">Cappuccino</h3>
               <p class="menu-item-desc">Equal parts rich espresso, steamed milk, and silky velvety foam.</p>
               <span class="menu-item-category-tag">Hot Coffee</span>
             </div>
@@ -385,10 +468,10 @@
           <!-- 4. Cafe Latte -->
           <article class="menu-item-card reveal-card" data-category="hot-coffee">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?auto=format&fit=crop&w=400&q=80" alt="Cafe Latte with warm poured milk" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?auto=format&fit=crop&w=400&q=80" alt="Cafe Latte with smooth steamed milk in glass" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Cafe Latte</h4>
+              <h3 class="menu-item-name">Cafe Latte</h3>
               <p class="menu-item-desc">Smooth espresso harmonized with generous steamed milk and light froth.</p>
               <span class="menu-item-category-tag">Hot Coffee</span>
             </div>
@@ -398,10 +481,10 @@
           <!-- 5. Classic Cold Coffee -->
           <article class="menu-item-card reveal-card" data-category="cold-coffee">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=400&q=80" alt="Creamy classic iced coffee" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=400&q=80" alt="Creamy chilled iced coffee with ice cubes" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Classic Cold Coffee</h4>
+              <h3 class="menu-item-name">Classic Cold Coffee</h3>
               <p class="menu-item-desc">Chilled espresso blended with chilled milk and a hint of organic sweetness.</p>
               <span class="menu-item-category-tag">Cold Coffee</span>
             </div>
@@ -410,10 +493,10 @@
           <!-- 6. Iced Latte -->
           <article class="menu-item-card reveal-card" data-category="cold-coffee">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=400&q=80" alt="Iced latte layered with espresso and milk" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=400&q=80" alt="Layered iced latte with chilled whole milk" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Iced Latte</h4>
+              <h3 class="menu-item-name">Iced Latte</h3>
               <p class="menu-item-desc">Freshly pulled espresso poured over cold whole milk and crystalline ice.</p>
               <span class="menu-item-category-tag">Cold Coffee</span>
             </div>
@@ -423,10 +506,10 @@
           <!-- 7. Veg Grilled Sandwich -->
           <article class="menu-item-card reveal-card" data-category="quick-bites">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=400&q=80" alt="Golden grilled veggie sandwich sliced diagonally" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=400&q=80" alt="Grilled cheese and vegetable sandwich cut into triangles" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Veg Grilled Sandwich</h4>
+              <h3 class="menu-item-name">Veg Grilled Sandwich</h3>
               <p class="menu-item-desc">Artisan sourdough pressed with seasonal grilled vegetables, herbs, and cheese.</p>
               <span class="menu-item-category-tag">Quick Bites</span>
             </div>
@@ -435,10 +518,10 @@
           <!-- 8. French Fries -->
           <article class="menu-item-card reveal-card" data-category="quick-bites">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=400&q=80" alt="Crispy golden potato fries" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=400&q=80" alt="Crispy salted french fries in basket" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">French Fries</h4>
+              <h3 class="menu-item-name">French Fries</h3>
               <p class="menu-item-desc">Crispy skin-on golden potato fries tossed in crushed sea salt and rosemary.</p>
               <span class="menu-item-category-tag">Quick Bites</span>
             </div>
@@ -447,10 +530,10 @@
           <!-- 9. Veg Burger -->
           <article class="menu-item-card reveal-card" data-category="quick-bites">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" alt="Gourmet toasted vegetable burger" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" alt="Toasted veggie burger with crisp lettuce and sauce" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Veg Burger</h4>
+              <h3 class="menu-item-name">Veg Burger</h3>
               <p class="menu-item-desc">Crispy plant patty, farm lettuce, vine tomatoes, and signature cafe emulsion.</p>
               <span class="menu-item-category-tag">Quick Bites</span>
             </div>
@@ -460,10 +543,10 @@
           <!-- 10. Chocolate Brownie -->
           <article class="menu-item-card reveal-card" data-category="sweet-treats">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80" alt="Decadent chocolate brownie square" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80" alt="Warm fudgy chocolate brownie square" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Chocolate Brownie</h4>
+              <h3 class="menu-item-name">Chocolate Brownie</h3>
               <p class="menu-item-desc">Fudgy 70% dark chocolate square served warm with a delicate crackled top.</p>
               <span class="menu-item-category-tag">Sweet Treats</span>
             </div>
@@ -472,10 +555,10 @@
           <!-- 11. Chocolate Muffin -->
           <article class="menu-item-card reveal-card" data-category="sweet-treats">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=400&q=80" alt="Bakery chocolate muffin with chocolate drops" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=400&q=80" alt="Fresh bakery chocolate chip muffin" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Chocolate Muffin</h4>
+              <h3 class="menu-item-name">Chocolate Muffin</h3>
               <p class="menu-item-desc">Moist baked muffin loaded with Belgian chocolate chips and cocoa dust.</p>
               <span class="menu-item-category-tag">Sweet Treats</span>
             </div>
@@ -484,10 +567,10 @@
           <!-- 12. Chocolate Cake -->
           <article class="menu-item-card reveal-card" data-category="sweet-treats">
             <div class="menu-item-thumb">
-              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" alt="Slice of rich layered chocolate ganache cake" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" alt="Rich chocolate ganache layer cake slice" loading="lazy" width="82" height="82">
             </div>
             <div class="menu-item-details">
-              <h4 class="menu-item-name">Chocolate Cake</h4>
+              <h3 class="menu-item-name">Chocolate Cake</h3>
               <p class="menu-item-desc">Tender layered dark sponge coated in silky handcrafted chocolate ganache.</p>
               <span class="menu-item-category-tag">Sweet Treats</span>
             </div>
@@ -518,6 +601,8 @@
                 alt="Freshly brewed cappuccino with latte art and a golden flaky croissant" 
                 class="experience-img"
                 loading="lazy"
+                width="1337"
+                height="746"
               >
               <span class="experience-index-tag">01 / CRAFT</span>
             </div>
@@ -544,6 +629,8 @@
                 alt="Comforting grilled artisan sandwich with melted cheese, crispy fries, and dipping sauce" 
                 class="experience-img"
                 loading="lazy"
+                width="1408"
+                height="768"
               >
               <span class="experience-index-tag">02 / BITES</span>
             </div>
@@ -566,6 +653,8 @@
                 alt="Friends enjoying coffee, conversation, and study time together in Two Sips cafe" 
                 class="experience-img"
                 loading="lazy"
+                width="1264"
+                height="848"
               >
               <span class="experience-index-tag">03 / SPACE</span>
             </div>
@@ -610,9 +699,16 @@
                   </svg>
                   <span>Get Directions</span>
                 </button>
-                <button class="btn btn-secondary" style="color: var(--color-cream); border-color: var(--color-cream);" data-open-modal="contactModal">
+                <a href="tel:+919096395892" class="btn btn-secondary" style="color: var(--color-cream); border-color: var(--color-cream);" aria-label="Call Now">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>Call Now</span>
+                </a>
+                <button class="btn btn-secondary" style="color: var(--color-cream); border-color: var(--color-cream);" data-open-modal="contactModal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
                   <span>Contact Us</span>
                 </button>
@@ -627,6 +723,8 @@
                   alt="Cozy armchair reading corner with warm Two Sips wooden wall sign" 
                   class="visit-highlight-img"
                   loading="lazy"
+                  width="1264"
+                  height="848"
                 >
                 <div class="visit-highlight-badge">
                   <span>Cozy Corner &bull; Drop In</span>
@@ -645,7 +743,7 @@
                   </div>
                   <div>
                     <div class="visit-info-label">Address</div>
-                    <div class="visit-info-value" id="cafeAddressText">12 Artisan Lane, Westside District</div>
+                    <div class="visit-info-value" id="cafeAddressText">Katraj, Pune, Maharashtra, India</div>
                   </div>
                 </div>
 
@@ -659,7 +757,7 @@
                   </div>
                   <div>
                     <div class="visit-info-label">Opening Hours</div>
-                    <div class="visit-info-value">Mon–Fri: 7:00 AM – 9:00 PM<br>Sat–Sun: 8:00 AM – 10:00 PM</div>
+                    <div class="visit-info-value">8:00 AM – 10:00 PM Daily</div>
                   </div>
                 </div>
 
@@ -673,7 +771,7 @@
                   </div>
                   <div>
                     <div class="visit-info-label">Contact</div>
-                    <div class="visit-info-value">+1 (555) 010-0123<br><span style="font-size: 0.9em; opacity: 0.85;">hello@twosips.example</span></div>
+                    <div class="visit-info-value">+91 90963 95892<br><span style="font-size: 0.9em; opacity: 0.85;">akashdhamal67@gmail.com</span></div>
                   </div>
                 </div>
 
@@ -720,7 +818,7 @@
 
         <!-- Quick Navigation -->
         <div>
-          <h4 class="footer-heading">Navigation</h4>
+          <h3 class="footer-heading">Navigation</h3>
           <ul class="footer-links">
             <li><a href="#home" class="footer-link">Home</a></li>
             <li><a href="#story" class="footer-link">Our Story</a></li>
@@ -732,12 +830,12 @@
 
         <!-- Contact & Socials -->
         <div>
-          <h4 class="footer-heading">Connect</h4>
+          <h3 class="footer-heading">Connect</h3>
           <div class="footer-contact-info">
-            <p><strong>Location:</strong> 12 Artisan Lane, Westside District</p>
-            <p><strong>Hours:</strong> Mon–Fri 7AM–9PM, Sat–Sun 8AM–10PM</p>
-            <p><strong>Contact:</strong> +1 (555) 010-0123</p>
-            <p><strong>Email:</strong> hello@twosips.example</p>
+            <p><strong>Location:</strong> Katraj, Pune, Maharashtra, India</p>
+            <p><strong>Hours:</strong> 8:00 AM – 10:00 PM Daily</p>
+            <p><strong>Contact:</strong> +91 90963 95892</p>
+            <p><strong>Email:</strong> akashdhamal67@gmail.com</p>
           </div>
 
           <div class="footer-socials" aria-label="Social media channels">
@@ -782,8 +880,8 @@
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
-        <p style="font-weight: 600; color: var(--color-espresso); margin-bottom: 4px;">12 Artisan Lane, Westside District</p>
-        <span style="font-size: 0.85rem; color: var(--color-warm-coffee);">Mon–Fri 7AM–9PM, Sat–Sun 8AM–10PM</span>
+        <p style="font-weight: 600; color: var(--color-espresso); margin-bottom: 4px;">Katraj, Pune, Maharashtra, India</p>
+        <span style="font-size: 0.85rem; color: var(--color-warm-coffee);">8:00 AM – 10:00 PM Daily</span>
       </div>
 
       <div style="display: flex; gap: 14px; flex-wrap: wrap;">

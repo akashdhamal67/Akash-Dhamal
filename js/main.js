@@ -24,39 +24,78 @@ document.addEventListener('DOMContentLoaded', () => {
   const favoriteVideos = document.querySelectorAll('.favorite-video');
   const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  const manageVideoPlayback = () => {
-    const isReduced = prefersReducedMotionQuery.matches;
-    if (heroVideo) {
-      if (isReduced) {
-        heroVideo.pause();
-      } else {
-        heroVideo.muted = true;
-        const playPromise = heroVideo.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Autoplay restricted by device battery saver; fallback poster will show
-          });
-        }
+  const manageHeroVideoPlayback = () => {
+    if (!heroVideo) return;
+    if (prefersReducedMotionQuery.matches) {
+      heroVideo.pause();
+    } else {
+      heroVideo.muted = true;
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay restricted by device battery saver; fallback poster will show
+        });
       }
     }
+  };
+
+  // Play card videos only when visible on screen, pause when scrolled away
+  if ('IntersectionObserver' in window) {
+    const cardVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        video._isVisibleOnScreen = entry.isIntersecting;
+        if (prefersReducedMotionQuery.matches) {
+          video.pause();
+          return;
+        }
+        if (entry.isIntersecting) {
+          video.muted = true;
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
+        } else {
+          video.pause();
+        }
+      });
+    }, {
+      rootMargin: '0px',
+      threshold: 0.1
+    });
+
     favoriteVideos.forEach((video) => {
-      if (isReduced) {
-        video.pause();
-      } else {
+      cardVideoObserver.observe(video);
+    });
+  } else {
+    // Fallback if IntersectionObserver is not available
+    favoriteVideos.forEach((video) => {
+      if (!prefersReducedMotionQuery.matches) {
         video.muted = true;
         const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {});
-        }
+        if (playPromise !== undefined) playPromise.catch(() => {});
+      }
+    });
+  }
+
+  const handleMotionChange = () => {
+    manageHeroVideoPlayback();
+    favoriteVideos.forEach((video) => {
+      if (prefersReducedMotionQuery.matches) {
+        video.pause();
+      } else if (video._isVisibleOnScreen) {
+        video.muted = true;
+        const playPromise = video.play();
+        if (playPromise !== undefined) playPromise.catch(() => {});
       }
     });
   };
 
-  manageVideoPlayback();
+  manageHeroVideoPlayback();
   if (prefersReducedMotionQuery.addEventListener) {
-    prefersReducedMotionQuery.addEventListener('change', manageVideoPlayback);
+    prefersReducedMotionQuery.addEventListener('change', handleMotionChange);
   } else if (prefersReducedMotionQuery.addListener) {
-    prefersReducedMotionQuery.addListener(manageVideoPlayback);
+    prefersReducedMotionQuery.addListener(handleMotionChange);
   }
 
   // 2. Mobile Navigation Drawer

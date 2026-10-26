@@ -88,10 +88,15 @@ section[id],
   scroll-margin-top: 90px;
 }
 
+section {
+  margin: 0;
+  border: none;
+}
+
 body {
   margin: 0;
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--color-soft-white);
+  background-color: var(--color-cream);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -1112,7 +1117,9 @@ button {
    ========================================================================== */
 .favorites-section {
   padding: 88px 0;
-  background-color: var(--color-soft-white);
+  background-color: var(--color-cream);
+  margin: 0;
+  border: none;
 }
 
 .favorites-grid {
@@ -1330,10 +1337,18 @@ button {
 @media (min-width: 980px) {
   .story-section {
     min-height: calc(100vh - 90px);
-    padding: 48px 0;
+    height: calc(100vh - 90px);
+    padding: 32px 0;
+    margin: 0;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    background-color: var(--color-cream);
+  }
+
+  .story-section .container {
+    width: 100%;
+    margin: 0 auto;
   }
 
   .story-grid {
@@ -1341,20 +1356,29 @@ button {
     gap: 56px;
     align-items: center;
     width: 100%;
+    margin: 0;
+  }
+
+  .story-media-collage {
+    position: relative;
+    height: calc(100vh - 90px - 96px);
+    width: 100%;
   }
 
   .story-img-main-wrap {
-    max-height: calc(100vh - 220px);
+    height: calc(100vh - 90px - 96px);
     width: 100%;
-    height: auto;
+    max-height: none;
     aspect-ratio: unset;
     border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(118, 87, 71, 0.15);
   }
 
   .story-img-main {
-    max-height: calc(100vh - 220px);
+    height: calc(100vh - 90px - 96px);
     width: 100%;
-    height: 100%;
     object-fit: cover;
   }
 
@@ -1364,6 +1388,11 @@ button {
     right: -20px;
     max-width: 270px;
     padding: 20px 24px;
+    z-index: 2;
+  }
+
+  .story-content {
+    max-width: 520px;
   }
 
   .story-content .section-kicker {
@@ -1380,7 +1409,6 @@ button {
     font-size: 0.96rem;
     line-height: 1.56;
     margin-bottom: 16px;
-    max-width: 520px;
   }
 
   .story-highlights {
@@ -1405,6 +1433,9 @@ button {
     min-height: auto;
     height: auto;
     padding: 68px 0;
+    margin: 0;
+    display: block;
+    background-color: var(--color-cream);
   }
 
   .story-grid {
@@ -1412,10 +1443,24 @@ button {
     gap: 36px;
   }
 
+  .story-media-collage {
+    height: auto;
+    width: 100%;
+    display: block;
+  }
+
   .story-img-main-wrap {
+    height: auto;
+    width: 100%;
     max-height: none;
     aspect-ratio: 4 / 3;
     border-radius: var(--radius-lg);
+  }
+
+  .story-img-main {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .story-accent-card {
@@ -1454,7 +1499,9 @@ button {
    ========================================================================== */
 .menu-section {
   padding: 96px 0;
-  background-color: var(--color-soft-white);
+  background-color: var(--color-cream);
+  margin: 0;
+  border: none;
 }
 
 .menu-tabs-wrapper {
@@ -1772,8 +1819,10 @@ button {
    ========================================================================== */
 .visit-section {
   padding: 96px 0 108px 0;
-  background-color: var(--color-soft-white);
+  background-color: var(--color-cream);
   position: relative;
+  margin: 0;
+  border: none;
 }
 
 .visit-card-container {

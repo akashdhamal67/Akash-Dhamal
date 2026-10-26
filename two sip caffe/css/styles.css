@@ -1175,14 +1175,17 @@ textarea:focus-visible,
   background-color: var(--color-cream-dark);
 }
 
-.favorite-img {
+.favorite-img,
+.favorite-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.55s ease;
+  display: block;
 }
 
-.favorite-card:hover .favorite-img {
+.favorite-card:hover .favorite-img,
+.favorite-card:hover .favorite-video {
   transform: scale(1.065);
 }
 
@@ -1190,6 +1193,7 @@ textarea:focus-visible,
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 2;
   background-color: rgba(246, 240, 231, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);

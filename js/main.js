@@ -19,30 +19,44 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
 
-  // Hero Background Video Autoplay Assurance & Motion Preference Check
+  // Hero & Card Video Autoplay Assurance & Motion Preference Check
   const heroVideo = document.querySelector('.hero-video-element');
+  const favoriteVideos = document.querySelectorAll('.favorite-video');
   const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  const manageHeroVideoMotion = () => {
-    if (!heroVideo) return;
-    if (prefersReducedMotionQuery.matches) {
-      heroVideo.pause();
-    } else {
-      heroVideo.muted = true;
-      const playPromise = heroVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay restricted by device battery saver; fallback poster will show
-        });
+  const manageVideoPlayback = () => {
+    const isReduced = prefersReducedMotionQuery.matches;
+    if (heroVideo) {
+      if (isReduced) {
+        heroVideo.pause();
+      } else {
+        heroVideo.muted = true;
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay restricted by device battery saver; fallback poster will show
+          });
+        }
       }
     }
+    favoriteVideos.forEach((video) => {
+      if (isReduced) {
+        video.pause();
+      } else {
+        video.muted = true;
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      }
+    });
   };
 
-  manageHeroVideoMotion();
+  manageVideoPlayback();
   if (prefersReducedMotionQuery.addEventListener) {
-    prefersReducedMotionQuery.addEventListener('change', manageHeroVideoMotion);
+    prefersReducedMotionQuery.addEventListener('change', manageVideoPlayback);
   } else if (prefersReducedMotionQuery.addListener) {
-    prefersReducedMotionQuery.addListener(manageHeroVideoMotion);
+    prefersReducedMotionQuery.addListener(manageVideoPlayback);
   }
 
   // 2. Mobile Navigation Drawer

@@ -78,6 +78,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--color-soft-white);
   color: var(--text-primary);
@@ -579,67 +580,82 @@ button {
 }
 
 /* ==========================================================================
-   Hero Section — Editorial Cafe Premises Showcase
+   Hero Section — Full-Width Cinematic Cafe Video Background
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 88vh;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding-top: calc(var(--navbar-height) + 16px);
+  padding-bottom: 0;
+  border: none;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--navbar-height) + 20px);
-  padding-bottom: 60px;
-  background-color: var(--color-cream);
-  overflow: hidden;
 }
 
 @media (max-width: 979px) {
   .hero-section {
-    min-height: auto;
-    padding-top: calc(var(--navbar-height) + 16px);
-    padding-bottom: 48px;
+    height: 100vh;
+    height: 100svh;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding-top: calc(var(--navbar-height) + 12px);
+    padding-bottom: 0;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: calc(var(--navbar-height) + 14px);
-    padding-bottom: 40px;
+    height: 100vh;
+    height: 100svh;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding-top: calc(var(--navbar-height) + 8px);
+    padding-bottom: 0;
   }
 }
 
 /* Full-Width Background Video Container */
 .hero-video-wrap {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
   overflow: hidden;
   z-index: 1;
   pointer-events: none;
-  background-color: var(--color-cream);
-  background-image: url('../two sips images/944fb386-9395-4302-a45f-b9e67dd57deb.jpg');
-  background-size: cover;
-  background-position: center;
 }
 
 .hero-video-element {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
   display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 /* Subtle Contrast Scrim Overlay */
 .hero-video-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     90deg,
     rgba(246, 240, 231, 0.95) 0%,
@@ -663,9 +679,6 @@ button {
 }
 
 @media (max-width: 480px) {
-  .hero-video-element {
-    object-position: center 25%;
-  }
   .hero-video-overlay {
     background: linear-gradient(
       180deg,
@@ -680,20 +693,6 @@ button {
   .hero-video-element {
     display: none;
   }
-}
-
-.hero-ambient-glow {
-  position: absolute;
-  top: -15%;
-  right: -8%;
-  width: 60vw;
-  height: 60vw;
-  max-width: 800px;
-  max-height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(230, 213, 191, 0.35) 0%, rgba(246, 240, 231, 0) 70%);
-  z-index: 2;
-  pointer-events: none;
 }
 
 .hero-grid {

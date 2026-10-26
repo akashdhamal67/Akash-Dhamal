@@ -108,9 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const navHeight = navbar ? navbar.offsetHeight : 80;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
         window.scrollTo({
           top: Math.max(0, targetPosition),
-          behavior: 'smooth'
+          behavior: scrollBehavior
         });
       }
     });
@@ -299,4 +300,28 @@ document.addEventListener('DOMContentLoaded', () => {
       this.src = fallbackSvg;
     });
   });
+
+  // 11. Subtle Scroll-Reveal Observer with Staggered Delays
+  const revealElements = document.querySelectorAll('.reveal-section, .reveal-card');
+  const userPrefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (userPrefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          entry.target.querySelectorAll('.reveal-card').forEach(card => card.classList.add('is-revealed'));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
 });

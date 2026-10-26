@@ -1121,14 +1121,14 @@ button {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-card);
-  transition: all var(--transition-normal);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .favorite-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(59, 41, 32, 0.09);
   border-color: var(--color-beige);
 }
 
@@ -1262,6 +1262,12 @@ button {
   box-shadow: var(--shadow-hover);
   max-width: 290px;
   border: 1px solid rgba(230, 213, 191, 0.15);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-accent-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(35, 22, 16, 0.28);
 }
 
 .story-accent-number {
@@ -1566,14 +1572,14 @@ button {
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border-card);
-  transition: all var(--transition-normal);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .experience-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(59, 41, 32, 0.09);
   border-color: var(--color-beige);
 }
 
@@ -1785,6 +1791,13 @@ button {
   border-radius: var(--radius-lg);
   padding: 36px;
   backdrop-filter: blur(10px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.visit-details-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+  border-color: rgba(230, 213, 191, 0.28);
 }
 
 @media (max-width: 767px) {
@@ -2378,11 +2391,89 @@ button {
   }
 }
 
+/* ==========================================================================
+   Subtle Scroll-Reveal Animations & Staggered Delays
+   ========================================================================== */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-section.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background-color 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-section.is-revealed .reveal-card,
+.reveal-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Delays for Cards */
+.favorites-grid .favorite-card:nth-child(1) { transition-delay: 0.06s; }
+.favorites-grid .favorite-card:nth-child(2) { transition-delay: 0.14s; }
+.favorites-grid .favorite-card:nth-child(3) { transition-delay: 0.22s; }
+
+.experience-grid .experience-card:nth-child(1) { transition-delay: 0.06s; }
+.experience-grid .experience-card:nth-child(2) { transition-delay: 0.14s; }
+.experience-grid .experience-card:nth-child(3) { transition-delay: 0.22s; }
+
+.menu-grid .menu-item-card:nth-child(1) { transition-delay: 0.04s; }
+.menu-grid .menu-item-card:nth-child(2) { transition-delay: 0.08s; }
+.menu-grid .menu-item-card:nth-child(3) { transition-delay: 0.12s; }
+.menu-grid .menu-item-card:nth-child(4) { transition-delay: 0.16s; }
+.menu-grid .menu-item-card:nth-child(5) { transition-delay: 0.20s; }
+.menu-grid .menu-item-card:nth-child(6) { transition-delay: 0.24s; }
+.menu-grid .menu-item-card:nth-child(7) { transition-delay: 0.28s; }
+.menu-grid .menu-item-card:nth-child(8) { transition-delay: 0.32s; }
+.menu-grid .menu-item-card:nth-child(9) { transition-delay: 0.36s; }
+.menu-grid .menu-item-card:nth-child(10) { transition-delay: 0.40s; }
+.menu-grid .menu-item-card:nth-child(11) { transition-delay: 0.44s; }
+.menu-grid .menu-item-card:nth-child(12) { transition-delay: 0.48s; }
+
+.story-accent-card { transition-delay: 0.16s; }
+.visit-details-box { transition-delay: 0.14s; }
+
+/* Clear delay on hover so interactive card lift & shadow react immediately */
+.reveal-card.is-revealed:hover,
+.reveal-section.is-revealed .reveal-card:hover {
+  transition-delay: 0s !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal-section,
+  .reveal-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+  .btn:hover,
+  .favorite-card:hover,
+  .menu-item-card:hover,
+  .experience-card:hover,
+  .story-accent-card:hover,
+  .visit-details-box:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 }

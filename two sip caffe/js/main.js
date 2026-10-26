@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (targetElement) {
         e.preventDefault();
-        const navHeight = navbar ? navbar.offsetHeight : 80;
+        const navHeight = 90;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
         const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
         window.scrollTo({
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const highlightNavOnScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-    const navHeight = navbar ? navbar.offsetHeight : 80;
+    const navHeight = 90;
     const isAtBottom = (window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 60);
 
     let currentSectionId = 'home';

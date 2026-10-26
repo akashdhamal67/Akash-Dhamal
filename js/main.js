@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Navbar Scroll Elevation
   const navbar = document.getElementById('navbar');
   const handleScroll = () => {
-    if (window.scrollY > 40) {
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > 40) {
       navbar.classList.add('scrolled');
       navbar.classList.remove('transparent');
     } else {
@@ -34,33 +35,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileBackdrop = document.getElementById('mobileBackdrop');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer-close');
+  const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
   const openMobileNav = () => {
-    mobileToggle.classList.add('open');
-    mobileDrawer.classList.add('open');
-    mobileBackdrop.classList.add('open');
-    mobileToggle.setAttribute('aria-expanded', 'true');
+    if (mobileToggle) {
+      mobileToggle.classList.add('open');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+    if (mobileDrawer) mobileDrawer.classList.add('open');
+    if (mobileBackdrop) mobileBackdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeMobileNav = () => {
-    mobileToggle.classList.remove('open');
-    mobileDrawer.classList.remove('open');
-    mobileBackdrop.classList.remove('open');
-    mobileToggle.setAttribute('aria-expanded', 'false');
+    if (mobileToggle) {
+      mobileToggle.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (mobileBackdrop) mobileBackdrop.classList.remove('open');
     document.body.style.overflow = '';
   };
 
   if (mobileToggle) {
     mobileToggle.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.contains('open');
+      const isOpen = mobileDrawer && mobileDrawer.classList.contains('open');
       if (isOpen) {
         closeMobileNav();
       } else {
         openMobileNav();
       }
     });
+  }
+
+  if (mobileDrawerClose) {
+    mobileDrawerClose.addEventListener('click', closeMobileNav);
   }
 
   if (mobileBackdrop) {
@@ -76,43 +86,73 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#' || targetId === '') return;
-      const targetElement = document.querySelector(targetId);
+      let targetElement = document.querySelector(targetId);
+      if (!targetElement && (targetId === '#home' || targetId === '#hero')) {
+        targetElement = document.getElementById('home') || document.getElementById('hero') || document.querySelector('.hero-section');
+      }
       if (targetElement) {
         e.preventDefault();
         const navHeight = navbar ? navbar.offsetHeight : 80;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
         window.scrollTo({
-          top: targetPosition,
+          top: Math.max(0, targetPosition),
           behavior: 'smooth'
         });
       }
     });
   });
 
-  // 4. Active Section Highlighting in Desktop Nav
-  const sections = document.querySelectorAll('section[id]');
+  // 4. Active Section Highlighting in Desktop & Mobile Nav
+  const navSections = [
+    { id: 'home', el: document.getElementById('home') || document.getElementById('hero') || document.querySelector('.hero-section') },
+    { id: 'story', el: document.getElementById('story') },
+    { id: 'menu', el: document.getElementById('menu') },
+    { id: 'experience', el: document.getElementById('experience') },
+    { id: 'visit', el: document.getElementById('visit') }
+  ].filter(item => item.el !== null);
+
   const desktopNavLinks = document.querySelectorAll('.nav-menu-desktop .nav-link');
+  const drawerNavLinks = document.querySelectorAll('.mobile-menu-links .mobile-nav-link');
 
   const highlightNavOnScroll = () => {
-    const scrollY = window.pageYOffset;
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     const navHeight = navbar ? navbar.offsetHeight : 80;
+    const isAtBottom = (window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 60);
 
-    sections.forEach(section => {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - navHeight - 60;
-      const sectionId = section.getAttribute('id');
+    let currentSectionId = 'home';
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        desktopNavLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
+    if (isAtBottom) {
+      currentSectionId = 'visit';
+    } else {
+      for (let i = 0; i < navSections.length; i++) {
+        const sectionTop = navSections[i].el.offsetTop - navHeight - 80;
+        if (scrollY >= sectionTop) {
+          currentSectionId = navSections[i].id;
+        }
+      }
+    }
+
+    desktopNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${currentSectionId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    drawerNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${currentSectionId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   };
+
   window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
+  highlightNavOnScroll(); // Initial check
 
   // 5. Menu Category Filter Tabs
   const menuTabs = document.querySelectorAll('.menu-tab-btn');

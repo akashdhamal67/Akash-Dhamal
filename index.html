@@ -17,7 +17,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body id="home">
+<body>
 
   <!-- Navigation Bar -->
   <header class="navbar transparent" id="navbar">
@@ -73,12 +73,27 @@
 
   <!-- Mobile Navigation Drawer -->
   <aside class="mobile-nav-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
-    <div class="mobile-menu-links">
-      <a href="#home" class="mobile-nav-link">Home</a>
-      <a href="#story" class="mobile-nav-link">Our Story</a>
-      <a href="#menu" class="mobile-nav-link">Menu</a>
-      <a href="#experience" class="mobile-nav-link">Experience</a>
-      <a href="#visit" class="mobile-nav-link">Visit Us</a>
+    <div class="mobile-drawer-top">
+      <div class="mobile-drawer-header">
+        <div class="logo-text-group">
+          <span class="logo-name">TWO SIPS</span>
+          <span class="logo-kicker">COFFEE &amp; BAKEHOUSE</span>
+        </div>
+        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu-links">
+        <a href="#home" class="mobile-nav-link active">Home</a>
+        <a href="#story" class="mobile-nav-link">Our Story</a>
+        <a href="#menu" class="mobile-nav-link">Menu</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#visit" class="mobile-nav-link">Visit Us</a>
+      </div>
     </div>
 
     <div class="mobile-nav-footer">
@@ -90,7 +105,7 @@
   <!-- Main Content -->
   <main>
     <!-- Section 3: Hero Section with Full-Width Cinematic Video Background -->
-    <section class="hero-section hero-has-video" id="hero">
+    <section class="hero-section hero-has-video" id="home">
       <!-- Full-Width Background Video Container with Fallback Poster -->
       <div class="hero-video-wrap" aria-hidden="true">
         <video 

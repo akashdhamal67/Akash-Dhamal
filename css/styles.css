@@ -706,6 +706,20 @@ button {
   border: none;
 }
 
+.hero-poster-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 /* Subtle Contrast Scrim Overlay */
 .hero-video-overlay {
   position: absolute;
@@ -748,7 +762,16 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-video-element {
-    display: none;
+    display: none !important;
+  }
+  .hero-poster-fallback {
+    display: block !important;
+  }
+  .hero-video-wrap {
+    background-image: url('../assets/hero-video-poster.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 

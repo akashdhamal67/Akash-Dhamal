@@ -19,16 +19,30 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
 
-  // Hero Background Video Autoplay Assurance
+  // Hero Background Video Autoplay Assurance & Motion Preference Check
   const heroVideo = document.querySelector('.hero-video-element');
-  if (heroVideo) {
-    heroVideo.muted = true;
-    const playPromise = heroVideo.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Autoplay may be restricted by device battery saver; fallback poster will show
-      });
+  const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const manageHeroVideoMotion = () => {
+    if (!heroVideo) return;
+    if (prefersReducedMotionQuery.matches) {
+      heroVideo.pause();
+    } else {
+      heroVideo.muted = true;
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay restricted by device battery saver; fallback poster will show
+        });
+      }
     }
+  };
+
+  manageHeroVideoMotion();
+  if (prefersReducedMotionQuery.addEventListener) {
+    prefersReducedMotionQuery.addEventListener('change', manageHeroVideoMotion);
+  } else if (prefersReducedMotionQuery.addListener) {
+    prefersReducedMotionQuery.addListener(manageHeroVideoMotion);
   }
 
   // 2. Mobile Navigation Drawer

@@ -2083,19 +2083,18 @@ button {
   padding-top: 36px;
   border-top: 1px solid rgba(230, 213, 191, 0.1);
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: center;
   align-items: center;
   text-align: center;
   color: var(--text-inverse-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
 }
 
 @media (min-width: 768px) {
   .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
   }
 }
 

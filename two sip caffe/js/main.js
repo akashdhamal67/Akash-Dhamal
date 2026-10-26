@@ -18,6 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
 
+  // Hero Background Video Autoplay Assurance
+  const heroVideo = document.querySelector('.hero-video-element');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playPromise = heroVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay may be restricted by device battery saver; fallback poster will show
+      });
+    }
+  }
+
   // 2. Mobile Navigation Drawer
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');

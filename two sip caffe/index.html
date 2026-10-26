@@ -89,9 +89,26 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Section 3: Hero Section (Art-Directed Cafe Premises Showcase) -->
-    <section class="hero-section" id="hero">
-      <div class="hero-ambient-glow"></div>
+    <!-- Section 3: Hero Section with Full-Width Cinematic Video Background -->
+    <section class="hero-section hero-has-video" id="hero">
+      <!-- Full-Width Background Video Container with Fallback Poster -->
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video 
+          class="hero-video-element" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          poster="two sips images/944fb386-9395-4302-a45f-b9e67dd57deb.jpg"
+          preload="auto"
+        >
+          <source src="caffe%20video.mp4" type="video/mp4">
+          <source src="caffe video.mp4" type="video/mp4">
+        </video>
+        <!-- Cinematic Contrast Overlay for Text Readability -->
+        <div class="hero-video-overlay"></div>
+      </div>
+
       <div class="container hero-grid">
         <!-- Content Column -->
         <div class="hero-content">
@@ -136,23 +153,8 @@
           </div>
         </div>
 
-        <!-- Media Column: Editorial Cafe Premises Showcase -->
-        <div class="hero-media-composition">
-          <!-- Main Frame: High-Resolution Architectural Cafe Premises -->
-          <div class="hero-premises-frame">
-            <img 
-              src="two sips images/944fb386-9395-4302-a45f-b9e67dd57deb.jpg" 
-              alt="Two Sips Coffee &amp; Bakehouse modern cafe premises with sunlit tables, pendant lights, and welcoming artisan ambience"
-              class="hero-premises-img"
-              loading="eager"
-            >
-            <div class="hero-premises-tag">
-              <span class="hero-premises-tag-dot"></span>
-              <span>Cafe Space &bull; Artisan Ambience</span>
-            </div>
-          </div>
-
-          <!-- Floating Artisan Detail Card -->
+        <!-- Floating Artisan Detail Card Over Video -->
+        <div class="hero-media-composition hero-media-video-layer">
           <div class="hero-artisan-float">
             <div class="hero-artisan-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

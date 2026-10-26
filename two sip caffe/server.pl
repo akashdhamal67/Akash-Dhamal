@@ -20,7 +20,9 @@ my %mime = (
     'jpeg' => 'image/jpeg',
     'json' => 'application/json',
     'webp' => 'image/webp',
-    'ico'  => 'image/x-icon'
+    'ico'  => 'image/x-icon',
+    'mp4'  => 'video/mp4',
+    'webm' => 'video/webm'
 );
 
 my $server = IO::Socket::INET->new(

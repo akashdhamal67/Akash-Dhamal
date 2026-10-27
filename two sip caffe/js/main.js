@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
       heroVideo.pause();
     } else {
       heroVideo.muted = true;
+      heroVideo.setAttribute('playsinline', '');
+      heroVideo.setAttribute('webkit-playsinline', '');
+      if (window.innerWidth <= 768) {
+        heroVideo.setAttribute('poster', 'assets/hero-video-poster-mobile.webp');
+      }
       const playPromise = heroVideo.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
@@ -38,6 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   };
+
+  const tryHeroPlayOnInteraction = () => {
+    if (heroVideo && !prefersReducedMotionQuery.matches && heroVideo.paused) {
+      heroVideo.play().catch(() => {});
+    }
+  };
+  window.addEventListener('touchstart', tryHeroPlayOnInteraction, { passive: true, once: true });
 
   // Play card videos only when visible on screen, pause when scrolled away
   if ('IntersectionObserver' in window) {
